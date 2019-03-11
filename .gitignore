@@ -3,3 +3,4 @@ node_modules
 lib
 geckodriver.log
 secrets.py
+__pycache__
