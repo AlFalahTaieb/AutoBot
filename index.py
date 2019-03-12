@@ -29,16 +29,16 @@ def do_work():
         elem.send_keys(secrets.pwd)
         elem.send_keys(Keys.RETURN)
         assert "No results found." not in driver.page_source
-    elif operation =='gmail':
+    elif operation =='hattrick':
         driver = webdriver.Firefox()
-        driver.get("https://www.gmail.com")
+        driver.get("https://www.hattrick.org")
         # assert "facebook" in driver.title
-        elem = driver.find_element_by_id("identifierId")
+        elem = driver.find_element_by_id("ctl00_CPContent_ucLogin_txtUserName")
         elem.clear()
-        elem.send_keys(secrets.email)
-        elem = driver.find_element_by_id("pass")
+        elem.send_keys(secrets.usernameh)
+        elem = driver.find_element_by_id("ctl00_CPContent_ucLogin_txtPassword")
         elem.clear()
-        elem.send_keys(secrets.pwd)
+        elem.send_keys(secrets.pwdh)
         elem.send_keys(Keys.RETURN)
     else:
         print('Unrecognised argument.')
