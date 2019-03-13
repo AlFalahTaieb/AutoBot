@@ -40,6 +40,17 @@ def do_work():
         elem.clear()
         elem.send_keys(secrets.pwdh)
         elem.send_keys(Keys.RETURN)
+    elif operation =='reddit':
+        driver = webdriver.Firefox()
+        driver.get("https://old.reddit.com/")
+        # assert "facebook" in driver.title
+        elem = driver.find_element_by_name("user")
+        elem.clear()
+        elem.send_keys(secrets.usernameR)
+        elem = driver.find_element_by_name("passwd")
+        elem.clear()
+        elem.send_keys(secrets.passR)
+        elem.send_keys(Keys.RETURN)
     else:
         print('Unrecognised argument.')
 
