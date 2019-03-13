@@ -15,6 +15,7 @@ def do_work():
             gmail to connect to gmail
             hattrick to connect to hattrick
             reddit to connect to reddit
+            spotify to connec to spotify 
     ''')
 
     if operation == 'facebook':
@@ -64,6 +65,21 @@ def do_work():
         elem.clear()
         elem.send_keys(secrets.pwdG)
         elem.send_keys(Keys.RETURN)
+    elif operation == 'spotify':
+        driver = webdriver.Firefox()
+        driver.get("https://accounts.spotify.com/fr/login?continue=https:%2F%2Fopen.spotify.com%2Fbrowse%2Ffeatured")
+        # assert "facebook" in driver.title
+        elem = driver.find_element_by_id("login-username")
+        elem.clear()
+        elem.send_keys(secrets.emailS)
+        elem.send_keys(Keys.RETURN)
+        # time.sleep(1)
+        elem = driver.find_element_by_id("login-password")
+        elem.clear()
+        elem.send_keys(secrets.passS)
+        time.sleep(1)
+
+        # elem.send_keys(Keys.RETURN)
     else:
         print('Unrecognised argument.')
 
