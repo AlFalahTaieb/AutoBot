@@ -1,14 +1,14 @@
 
 import sys
+import time
 import secrets
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
 
-
 def do_work():
-        
+
     operation = input('''
     Please type in the math operation you would like to complete:
             facebook to connect to facebook
@@ -29,7 +29,7 @@ def do_work():
         elem.send_keys(secrets.pwd)
         elem.send_keys(Keys.RETURN)
         assert "No results found." not in driver.page_source
-    elif operation =='hattrick':
+    elif operation == 'hattrick':
         driver = webdriver.Firefox()
         driver.get("https://www.hattrick.org")
         # assert "facebook" in driver.title
@@ -40,7 +40,7 @@ def do_work():
         elem.clear()
         elem.send_keys(secrets.pwdh)
         elem.send_keys(Keys.RETURN)
-    elif operation =='reddit':
+    elif operation == 'reddit':
         driver = webdriver.Firefox()
         driver.get("https://old.reddit.com/")
         # assert "facebook" in driver.title
@@ -51,12 +51,21 @@ def do_work():
         elem.clear()
         elem.send_keys(secrets.passR)
         elem.send_keys(Keys.RETURN)
+    elif operation == 'gmail':
+        driver = webdriver.Firefox()
+        driver.get("https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin")
+        # assert "facebook" in driver.title
+        elem = driver.find_element_by_id("identifierId")
+        elem.clear()
+        elem.send_keys(secrets.emailG)
+        elem.send_keys(Keys.RETURN)
+        time.sleep(1)
+        elem = driver.find_element_by_name("password")
+        elem.clear()
+        elem.send_keys(secrets.pwdG)
+        elem.send_keys(Keys.RETURN)
     else:
         print('Unrecognised argument.')
-
-
-
-
 
 
 if __name__ == '__main__':
