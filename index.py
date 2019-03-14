@@ -10,7 +10,7 @@ from selenium.webdriver.common.keys import Keys
 def do_work():
 
     operation = input('''
-    Please type in the math operation you would like to complete:
+    Please type The service you want me to log you in:
             facebook to connect to facebook
             gmail to connect to gmail
             hattrick to connect to hattrick
