@@ -68,9 +68,7 @@ def do_work():
         elem.send_keys(Keys.RETURN)
     elif operation == 'spotify':
         driver = webdriver.Firefox()
-        driver.get(
-            "https://accounts.spotify.com/fr/login?continue=https:%2F%2Fopen.spotify.com%2Fbrowse%2Ffeatured")
-        # assert "facebook" in driver.title
+        driver.get("https://accounts.spotify.com/fr/login?continue=https:%2F%2Fopen.spotify.com%2Fbrowse%2Ffeatured")
         elem = driver.find_element_by_id("login-username")
         elem.clear()
         elem.send_keys(secrets.emailS)
@@ -83,11 +81,10 @@ def do_work():
         elem.send_keys(Keys.RETURN)
     elif operation == 'github':
         driver = webdriver.Firefox()
-        driver.get("https://github.com/login?return_to=%2Fbookercodes%2Fsetupi3")
+        driver.get("https://github.com/login")
         elem = driver.find_element_by_id("login_field")
         elem.clear()
         elem.send_keys(secrets.usernameG)
-        elem.send_keys(Keys.RETURN)
         elem = driver.find_element_by_id("password")
         elem.clear()
         elem.send_keys(secrets.passG)
