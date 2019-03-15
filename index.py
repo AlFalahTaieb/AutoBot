@@ -10,14 +10,18 @@ from selenium.webdriver.common.keys import Keys
 def do_work():
 
     operation = input('''
-    Please type The service you want me to log you in:
-            facebook to connect to facebook
-            gmail to connect to gmail
-            hattrick to connect to hattrick
-            reddit to connect to reddit
-            spotify to connec to spotify 
-            github to connec to github            
-    ''')
+  #################################################################
+  ##       Please type The service you want me to log you in:    ##
+  ##                 facebook to connect to FACEBOOK             ##
+  ##                 gmail to connect to GMAIL                   ##
+  ##                 hattrick to connect to HATTRICK             ##
+  ##                reddit to connect to REDDIT                  ##
+  ##                 spotify to connec to SPOTIFY                ##  
+  ##                 github to connec to GITHUB                  ##                
+  #################################################################
+  
+  
+  -> ''')
 
     if operation == 'facebook':
         driver = webdriver.Firefox()
